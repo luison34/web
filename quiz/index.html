@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YTF6K0LFGK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YTF6K0LFGK');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:title" content="Is your bathroom due for an upgrade?">
+<meta property="og:description" content="1-minute quiz. Discover what's possible for your space."><meta property="og:url" content="https://yourbathreno.com">
+<meta property="og:image" content="https://yourbathreno.com/preview.jpg">
+
+<title>Bathroom Renovation Assessment — Five Star Bath Solutions</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<!-- ═══ META PIXEL BASE CODE ═══ -->
+<!-- Paste your Meta Pixel base code (fbq('init',...) + fbq('track','PageView')) here -->
+<!-- This fires on every page load. The conversion event fires in script.js → saveRegistro() -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4285889088333258');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4285889088333258&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- ═══ GOOGLE TAG (already installed above) ═══ -->
+<!-- GA4 is already loaded. For Google Ads conversion, add your gtag conversion snippet in script.js → saveRegistro() -->
+
+</head>
+<body>
+<div id="app">
+
+<!-- HELP POPUP -->
+<div class="help-overlay" id="helpOverlay" onclick="closeHelp()">
+<div class="help-popup" onclick="event.stopPropagation()">
+<button class="help-close" onclick="closeHelp()">×</button>
+<div style="font-size:38px;text-align:center;margin-bottom:8px">💬</div>
+<h3 style="font-size:18px;font-weight:800;color:var(--text-dark);margin-bottom:6px;text-align:center">Have questions?</h3>
+<p style="font-size:14px;color:var(--text-mid);line-height:1.5;margin-bottom:16px;text-align:center">We're here to help. Reach out anytime.</p>
+<a href="sms:+16477045559" class="help-wa-btn" style="background:var(--teal)"><svg width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Text us</a>
+<a href="tel:+16477045559" class="help-phone-btn">📞 (647) 704-5559</a>
+</div>
+</div>
+
+<!-- S0: INTRO + Q1 -->
+<div class="screen active" data-screen="0">
+<div class="intro-content intro-top-aligned">
+<img src="logo.png" alt="Five Star Bath Solutions" class="intro-logo">
+<h1 class="intro-title">Discover your bathroom renovation options</h1>
+<p class="intro-desc">Answer a few quick questions and find out what's possible for your space. It only takes <strong>1 minute</strong>. No commitment. No pressure.</p>
+<div class="intro-tooltip">
+<div class="intro-tooltip-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="intro-tooltip-icon"><polyline points="20 6 9 17 4 12"/></svg><span>If your home is a good fit for a remodel</span></div>
+<div class="intro-tooltip-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="intro-tooltip-icon"><polyline points="20 6 9 17 4 12"/></svg><span>What level of renovation makes sense</span></div>
+<div class="intro-tooltip-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="intro-tooltip-icon"><polyline points="20 6 9 17 4 12"/></svg><span>What to expect in scope and budget</span></div>
+</div>
+<h2 class="intro-q1-title">🏠 Do you own or rent your home?</h2>
+<div class="options intro-options">
+<div class="option-card" onclick="sel(this,'ownership_status','owner',function(){goTo(2)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">I own my home</span><span class="option-sub">You hold the title or mortgage</span></div></div>
+<div class="option-card" onclick="sel(this,'ownership_status','renter',function(){goTo(2)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">I rent</span><span class="option-sub">You lease from a landlord</span></div></div>
+</div>
+</div>
+</div>
+
+<!-- S2: Q2 Home type -->
+<div class="screen" data-screen="2">
+<div class="top-bar"><button class="icon-btn" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><img src="logo.png" alt="Logo" class="top-logo"><button class="icon-btn" onclick="openHelp()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button></div>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" style="width:14%"></div></div></div>
+<div class="content"><div class="emoji-icon">🏘️</div><h1 class="question">What type of home do you live in?</h1>
+<div class="options">
+<div class="option-card" onclick="sel(this,'home_type','detached',function(){goTo(3)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Detached</span><span class="option-sub">Standalone single-family home</span></div></div>
+<div class="option-card" onclick="sel(this,'home_type','semi_detached',function(){goTo(3)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Semi-detached</span><span class="option-sub">Shares one wall with a neighbour</span></div></div>
+<div class="option-card" onclick="sel(this,'home_type','townhouse',function(){goTo(3)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Townhouse</span><span class="option-sub">Row or terraced home</span></div></div>
+<div class="option-card" onclick="sel(this,'home_type','condo',function(){goTo(3)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Condo / Apartment</span><span class="option-sub">Unit within a larger building</span></div></div>
+</div>
+<div class="step-dots"><div class="dot filled"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+</div></div>
+
+<!-- S3: Q3 Bathrooms -->
+<div class="screen" data-screen="3">
+<div class="top-bar"><button class="icon-btn" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><img src="logo.png" alt="Logo" class="top-logo"><button class="icon-btn" onclick="openHelp()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button></div>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" style="width:28%"></div></div></div>
+<div class="content"><div class="emoji-icon">🛁</div><h1 class="question">How many bathrooms do you have?</h1>
+<div class="options">
+<div class="option-card" onclick="sel(this,'bathroom_count','1',function(){handleBathroomCountNext()})"><div class="option-radio"></div><div class="option-text"><span class="option-label">One bathroom</span><span class="option-sub">Single full or half bath</span></div></div>
+<div class="option-card" onclick="sel(this,'bathroom_count','2',function(){handleBathroomCountNext()})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Two bathrooms</span><span class="option-sub">Primary + guest bath</span></div></div>
+<div class="option-card" onclick="sel(this,'bathroom_count','3_plus',function(){handleBathroomCountNext()})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Three or more</span><span class="option-sub">Multiple bathrooms throughout</span></div></div>
+</div>
+<div class="step-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+</div></div>
+
+<!-- S4: NUTRITION 1 -->
+<div class="screen" data-screen="4">
+<div class="top-bar"><button class="icon-btn" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><img src="logo.png" alt="Logo" class="top-logo"><button class="icon-btn" onclick="openHelp()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button></div>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" style="width:36%"></div></div></div>
+<div class="nutrition-content">
+<div class="navy-card">
+<div class="nutrition-badge-dark">💡 Did you know?</div>
+<h2 class="nutrition-title-dark">A Bathroom Upgrade Is One of the Smartest Home Investments</h2>
+<p class="nutrition-text-dark">In Canada, a mid-range bathroom remodel can recover up to 75% of its cost in added home value.</p>
+<div class="nutrition-facts">
+<div class="nutrition-fact"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nf-icon"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span>Top 3 home improvements for ROI in Canada</span></div>
+<div class="nutrition-fact"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nf-icon"><polyline points="20 6 9 17 4 12"/></svg><span>Updated bathrooms help homes sell faster</span></div>
+<div class="nutrition-fact"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nf-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Even small upgrades make a big impact</span></div>
+<div class="nutrition-fact"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nf-icon"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Sets your home apart in competitive markets</span></div>
+</div>
+</div>
+<!-- Before/After photos (outside navy card, on white bg) -->
+<!-- Uncomment when you have images. Recommended: 480px wide, horizontal -->
+<!-- <p class="nutrition-photo-label">This is how we work</p> -->
+<!-- <img src="images/before-after-1.jpg" class="nutrition-photo" alt="Before and after"> -->
+<!-- <p class="nutrition-photo-label">Your bathroom could look like this</p> -->
+<!-- <img src="images/before-after-2.jpg" class="nutrition-photo" alt="Before and after"> -->
+</div>
+<div class="bottom"><button class="continue-btn active" onclick="handleAfterNutrition1()">Let's Go</button></div>
+</div>
+
+<!-- S5: Q4 Reno count -->
+<div class="screen" data-screen="5">
+<div class="top-bar"><button class="icon-btn" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><img src="logo.png" alt="Logo" class="top-logo"><button class="icon-btn" onclick="openHelp()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button></div>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" style="width:44%"></div></div></div>
+<div class="content"><div class="emoji-icon">🚿</div><h1 class="question">How many bathrooms would you like to update?</h1>
+<div class="options">
+<div class="option-card" onclick="sel(this,'renovation_count','1',function(){goTo(9)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Just one</span><span class="option-sub">Single bathroom project</span></div></div>
+<div class="option-card" onclick="sel(this,'renovation_count','2',function(){goTo(9)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Two bathrooms</span><span class="option-sub">A couple of rooms to refresh</span></div></div>
+<div class="option-card" id="reno-3plus" onclick="sel(this,'renovation_count','3_plus',function(){goTo(9)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Three or more</span><span class="option-sub">Full-home bathroom overhaul</span></div></div>
+</div>
+<div class="step-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+</div></div>
+
+<!-- S6: Q5 Timeline -->
+<div class="screen" data-screen="6">
+<div class="top-bar"><button class="icon-btn" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><img src="logo.png" alt="Logo" class="top-logo"><button class="icon-btn" onclick="openHelp()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button></div>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" style="width:52%"></div></div></div>
+<div class="content"><div class="emoji-icon">📅</div><h1 class="question">How soon would you consider starting?</h1>
+<div class="options">
+<div class="option-card" onclick="sel(this,'renovation_timeline','asap',function(){goTo(8)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">As soon as possible</span><span class="option-sub">Ready to start immediately</span></div></div>
+<div class="option-card" onclick="sel(this,'renovation_timeline','3_months',function(){goTo(8)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Within 3 months</span><span class="option-sub">Planning for the near future</span></div></div>
+<div class="option-card" onclick="sel(this,'renovation_timeline','6_months',function(){goTo(8)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Within 6 months</span><span class="option-sub">Exploring options, no rush</span></div></div>
+<div class="option-card" onclick="sel(this,'renovation_timeline','browsing',function(){goTo(8)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Just browsing</span><span class="option-sub">Gathering ideas for later</span></div></div>
+</div>
+<div class="step-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div></div>
+</div></div>
+
+<!-- S7: Q6 Style -->
+<div class="screen" data-screen="7">
+<div class="top-bar"><button class="icon-btn" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><img src="logo.png" alt="Logo" class="top-logo"><button class="icon-btn" onclick="openHelp()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button></div>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" style="width:60%"></div></div></div>
+<div class="content"><div class="emoji-icon">🎨</div><h1 class="question">What bathroom style do you prefer?</h1>
+<div class="options">
+<div class="option-card" onclick="sel(this,'bathroom_style','modern',function(){goTo(6)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Modern / Minimalist</span><span class="option-sub">Clean lines, neutral tones, sleek fixtures</span></div></div>
+<div class="option-card" onclick="sel(this,'bathroom_style','classic',function(){goTo(6)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Classic / Traditional</span><span class="option-sub">Timeless elegance, warm finishes</span></div></div>
+<div class="option-card" onclick="sel(this,'bathroom_style','spa',function(){goTo(6)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Spa / Luxury</span><span class="option-sub">High-end materials, freestanding tub, rain shower</span></div></div>
+<div class="option-card" onclick="sel(this,'bathroom_style','undecided',function(){goTo(6)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Not sure yet</span><span class="option-sub">Open to suggestions from a designer</span></div></div>
+</div>
+<div class="step-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot active"></div><div class="dot"></div></div>
+</div></div>
+
+<!-- S8: NUTRITION 2 -->
+<div class="screen" data-screen="8">
+<div class="top-bar"><button class="icon-btn" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><img src="logo.png" alt="Logo" class="top-logo"><button class="icon-btn" onclick="openHelp()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button></div>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" style="width:68%"></div></div></div>
+<div class="nutrition-content">
+<div class="navy-card">
+<div class="nutrition-badge-dark">🤩 Almost there</div>
+<h2 class="nutrition-title-dark">Your Dream Bathroom Is Closer Than You Think</h2>
+<p class="nutrition-text-dark">Simple, fast, and stress-free. Here's why thousands of homeowners choose us:</p>
+<div class="nutrition-facts">
+<div class="nutrition-fact"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nf-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Custom designs tailored to your space</span></div>
+<div class="nutrition-fact"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nf-icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Professional installation in 1–2 days</span></div>
+<div class="nutrition-fact"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nf-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Full lifetime warranty included</span></div>
+<div class="nutrition-fact"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nf-icon"><polyline points="20 6 9 17 4 12"/></svg><span>100% waterproof, built to last</span></div>
+</div>
+</div>
+<!-- Before/After photos (outside navy card) -->
+<!-- <p class="nutrition-photo-label">This is how we work</p> -->
+<!-- <img src="images/before-after-3.jpg" class="nutrition-photo" alt="Before and after"> -->
+<!-- <p class="nutrition-photo-label">Your bathroom could look like this</p> -->
+<!-- <img src="images/before-after-4.jpg" class="nutrition-photo" alt="Before and after"> -->
+</div>
+<div class="bottom"><button class="continue-btn active" onclick="goTo(10)">Let's Keep Going</button></div>
+</div>
+
+<!-- S9: Q7 Reno type -->
+<div class="screen" data-screen="9">
+<div class="top-bar"><button class="icon-btn" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><img src="logo.png" alt="Logo" class="top-logo"><button class="icon-btn" onclick="openHelp()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button></div>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" style="width:76%"></div></div></div>
+<div class="content"><div class="emoji-icon">🔧</div><h1 class="question">What type of renovation are you considering?</h1>
+<div class="options">
+<div class="option-card" onclick="sel(this,'renovation_type','full_remodel',function(){goTo(7)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Full remodel</span><span class="option-sub">Gut and rebuild from scratch</span></div></div>
+<div class="option-card" onclick="sel(this,'renovation_type','tub_to_shower',function(){goTo(7)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Tub-to-shower conversion</span><span class="option-sub">Replace bathtub with a walk-in shower</span></div></div>
+<div class="option-card" onclick="sel(this,'renovation_type','refresh',function(){goTo(7)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Fixture & surface refresh</span><span class="option-sub">Update vanity, tiles, and hardware</span></div></div>
+<div class="option-card" onclick="sel(this,'renovation_type','accessibility',function(){goTo(7)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Accessibility upgrade</span><span class="option-sub">Walk-in tub, grab bars, barrier-free entry</span></div></div>
+<div class="option-card" onclick="sel(this,'renovation_type','undecided',function(){goTo(7)})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Not sure yet</span><span class="option-sub">I'd like expert guidance</span></div></div>
+</div>
+<div class="step-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot active"></div></div>
+</div></div>
+
+<!-- S10: Q8 Country -->
+<div class="screen" data-screen="10">
+<div class="top-bar"><button class="icon-btn" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><img src="logo.png" alt="Logo" class="top-logo"><button class="icon-btn" onclick="openHelp()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button></div>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" style="width:84%"></div></div></div>
+<div class="content"><div class="emoji-icon">🌎</div><h1 class="question">Where are you located?</h1>
+<div class="options">
+<div class="option-card" onclick="sel(this,'country','CA',function(){handleCountryNext()})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Canada</span><span class="option-sub">Provinces and territories</span></div></div>
+<div class="option-card" onclick="sel(this,'country','US',function(){handleCountryNext()})"><div class="option-radio"></div><div class="option-text"><span class="option-label">United States</span><span class="option-sub">All 50 states</span></div></div>
+<div class="option-card" onclick="sel(this,'country','other',function(){handleCountryNext()})"><div class="option-radio"></div><div class="option-text"><span class="option-label">Other</span><span class="option-sub">Outside North America</span></div></div>
+</div>
+<div class="step-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+</div></div>
+
+<!-- S11: ZIP -->
+<div class="screen" data-screen="11">
+<div class="top-bar"><button class="icon-btn" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><img src="logo.png" alt="Logo" class="top-logo"><button class="icon-btn" onclick="openHelp()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button></div>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" style="width:90%"></div></div></div>
+<div class="content" style="justify-content:center"><div class="emoji-icon">📍</div>
+<h1 class="question" id="zipTitle">What is your postal code?</h1>
+<div class="zip-input-wrap">
+<input type="text" class="zip-big-input" id="zipInput" placeholder="A1A1A1" maxlength="7" oninput="handleZipInput()" autocomplete="postal-code">
+<p class="zip-hint" id="zipHint">Enter your Canadian postal code</p>
+<p class="zip-error" id="zipError"></p>
+</div>
+</div>
+<div class="bottom"><button class="continue-btn" id="zipBtn" onclick="handleZipNext()">Continue</button></div>
+</div>
+
+<!-- S12: Lead Capture -->
+<div class="screen" data-screen="12">
+<div class="top-bar"><button class="icon-btn" onclick="goBack()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><img src="logo.png" alt="Logo" class="top-logo"><button class="icon-btn" onclick="openHelp()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button></div>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" style="width:95%"></div></div></div>
+<div class="lead-content">
+<div class="emoji-icon">😎</div>
+<h2 class="lead-title">Your personalized renovation plan is ready</h2>
+<p class="lead-text">Send us a photo of the bathroom you're considering remodeling. With just one photo, our team can:</p>
+<div class="lead-features">
+<div class="lead-feature"><div class="lead-feature-dot"></div><span>Review layout and current condition</span></div>
+<div class="lead-feature"><div class="lead-feature-dot"></div><span>Identify design and construction opportunities</span></div>
+<div class="lead-feature"><div class="lead-feature-dot"></div><span>Provide a preliminary cost estimate</span></div>
+</div>
+<p class="lead-trust">⭐ Rated 4.9 — 10,000+ Reviews</p>
+<div class="input-group"><div class="input-label">Full name</div><input type="text" class="input-field" id="nameInput" placeholder="e.g. Sarah Johnson" oninput="handleLeadInput()"></div>
+<div class="input-group"><div class="input-label">Phone number (10 digits)</div><input type="tel" class="input-field" id="phoneInput" placeholder="e.g. 4165550123" maxlength="10" oninput="handleLeadInput()"></div>
+<p style="font-size:12px;color:var(--text-mid);text-align:center;margin-top:6px">No commitment. No sales pressure.</p>
+</div>
+<div class="bottom"><button class="continue-btn" id="leadBtn" onclick="handleLeadSubmit()">Continue</button></div>
+</div>
+
+<!-- S13: Thank You -->
+<div class="screen" data-screen="13">
+<div class="thankyou-content">
+<div class="thankyou-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+<h2 class="thankyou-title">We're ready!</h2>
+<p class="thankyou-text">Thanks for sharing your details. A specialist from our team will message you shortly with simple instructions to send a photo of your bathroom.</p>
+<div class="thankyou-highlight"><p>This usually happens <strong>within the next few hours</strong>.</p></div>
+<p class="thankyou-text">If you prefer not to wait, you can text us now.</p>
+<a href="sms:+16477045559" class="text-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Text us your bathroom photo</a>
+</div>
+</div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
