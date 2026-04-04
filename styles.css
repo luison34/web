@@ -10,12 +10,12 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{font-family:'DM Sans',sans-serif;background:#F0F2F5;color:var(--text-dark);height:100%;overflow:hidden;-webkit-tap-highlight-color:transparent}
 #app{position:relative;width:100%;max-width:var(--max-w);height:100%;overflow:hidden;margin:0 auto;background:var(--white) url('marmol.jpg') center/cover no-repeat;box-shadow:0 0 40px rgba(0,0,0,.08)}
-.screen{position:absolute;inset:0;display:flex;flex-direction:column;background:rgba(255,255,255,.92);opacity:0;pointer-events:none;transition:opacity .35s ease,transform .35s ease;transform:translateX(50px);overflow-y:auto;-webkit-overflow-scrolling:touch}
+.screen{position:absolute;inset:0;display:flex;flex-direction:column;background:transparent;opacity:0;pointer-events:none;transition:opacity .35s ease,transform .35s ease;transform:translateX(50px);overflow-y:auto;-webkit-overflow-scrolling:touch}
 .screen.active{opacity:1;pointer-events:all;transform:translateX(0);z-index:10}
 .screen.exit-left{opacity:0;transform:translateX(-50px);z-index:5}
 
 /* ═══ Top bar ═══ */
-.top-bar{display:flex;align-items:center;justify-content:space-between;padding:16px 20px 10px;flex-shrink:0;position:sticky;top:0;background:rgba(255,255,255,.92);z-index:5}
+.top-bar{display:flex;align-items:center;justify-content:space-between;padding:16px 20px 10px;flex-shrink:0;position:sticky;top:0;background:transparent;z-index:5}
 .icon-btn{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;background:transparent;cursor:pointer;transition:all .2s;flex-shrink:0}
 .icon-btn:active{background:var(--main-light);border-color:var(--main)}
 .icon-btn svg{width:18px;height:18px;stroke:var(--main-dark)}
