@@ -60,22 +60,22 @@ body{font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--wh
 
 /* ═══ Nav ═══ */
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);transition:all .3s}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto}
-.nav-logo{height:36px;object-fit:contain}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 24px;max-width:960px;margin:0 auto}
+.nav-logo{height:100px;object-fit:contain}
 .nav-cta{padding:10px 22px;font-size:14px}
 .nav-phone{font-size:14px;font-weight:600;color:var(--text-dark);text-decoration:none;margin-right:16px;display:none}
 @media(min-width:600px){.nav-phone{display:inline}}
 
 /* ═══ Hero ═══ */
-.hero{padding:130px 0 80px;background:url('marmol.jpg') center/cover no-repeat;position:relative}
-.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,46,59,.75) 0%,rgba(26,46,59,.55) 100%)}
+.hero{padding:160px 0 80px;background:url('marmol.jpg') center/cover no-repeat;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,46,59,.55) 0%,rgba(26,46,59,.35) 100%)}
 .hero-inner{position:relative;z-index:2;text-align:center;color:var(--white)}
 .hero-logo{height:48px;margin-bottom:24px;object-fit:contain}
 .hero h1{font-size:clamp(28px,6vw,46px);font-weight:800;line-height:1.12;margin-bottom:16px;max-width:700px;margin-left:auto;margin-right:auto}
 .hero p{font-size:clamp(15px,3vw,18px);color:rgba(255,255,255,.85);line-height:1.6;max-width:540px;margin:0 auto 32px}
 .hero-badges{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:32px}
 .hero-badge{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,.9)}
-.hero-badge svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:2}
+.hero-badge svg{width:18px;height:18px;stroke:var(--white);fill:none;stroke-width:2}
 
 /* ═══ Services ═══ */
 .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
@@ -113,7 +113,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--wh
 /* ═══ Service Area ═══ */
 .area-content{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 @media(max-width:640px){.area-content{grid-template-columns:1fr}}
-.area-img{width:100%;height:300px}
+.area-img{width:100%;height:280px}
 .area-text h3{font-size:clamp(22px,4vw,30px);font-weight:800;margin-bottom:12px}
 .area-text p{font-size:14px;color:var(--text-mid);line-height:1.6;margin-bottom:20px}
 .area-cities{font-size:13px;color:var(--text-light);line-height:1.7}
@@ -121,7 +121,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--wh
 /* ═══ Footer ═══ */
 .footer{background:var(--navy);color:rgba(255,255,255,.7);padding:48px 0 24px}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
-.footer-logo{height:32px;object-fit:contain;opacity:.8}
+.footer-logo{height:80px;object-fit:contain}
 .footer-links{display:flex;align-items:center;gap:20px}
 .footer-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
 .footer-links a:hover{color:var(--white)}
@@ -144,7 +144,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--wh
 <!-- ═══ HERO ═══ -->
 <section class="hero">
 <div class="container hero-inner">
-<img src="logo.png" alt="Your Bath Reno" class="hero-logo">
 <h1>Toronto's Trusted Bathroom Renovation Specialists</h1>
 <p>Expert craftsmanship, certified professionals, and modern materials. Transforming bathrooms across the Greater Toronto Area.</p>
 <a href="quiz/" class="cta-btn">Take Our Free Assessment →</a>
@@ -321,9 +320,9 @@ service-accessibility.jpg (480×400)
 <section class="section section-alt">
 <div class="container">
 <div class="area-content">
-<div class="img-placeholder area-img" alt="Map or aerial photo of Toronto skyline and GTA — area-map.jpg (600x600)">
+<div class="img-placeholder area-img" alt="Map or aerial photo of Toronto skyline and GTA — area-map.jpg (800x450)">
 <img src="images/area-map.jpg" alt="Greater Toronto Area" onerror="this.remove()">
-area-map.jpg (600×600)
+area-map.jpg (800×450)
 </div>
 <div class="area-text">
 <div class="section-label" style="text-align:left">Service Area</div>
@@ -340,7 +339,7 @@ area-map.jpg (600×600)
 <footer class="footer">
 <div class="container">
 <div class="footer-inner">
-<img src="logo.png" alt="Your Bath Reno" class="footer-logo">
+<img src="logo-white.png" alt="Your Bath Reno" class="footer-logo">
 <div class="footer-links">
 <a href="tel:+16477045559">📞 (647) 704-5559</a>
 <a href="quiz/">Free Assessment</a>
