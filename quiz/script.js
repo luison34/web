@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════
 // CONFIG
 // ═══════════════════════════════════════════
-var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw-o1vUl0pZoBJUJ8ux_iSATNxCdhmzdvzbywKpkr14Ru02q2m0PZ0YPTEJt5dvH0DY/exec";
+var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyp0cYML-SvXPKyFVUIvKTyjiMOisnZU144Matu4BhEe8OSMeTo2cTTqwsbBEvuTrU/exec";
 
 var SCORES = {
   ownership_status: { owner:30, renter:0 },
@@ -15,6 +15,19 @@ var SCORES = {
 };
 
 var AUTO_ADVANCE_DELAY = 300;
+
+// ═══════════════════════════════════════════
+// URL TRACKING PARAMS (captured on page load)
+// Usage: ?c=paid&m=meta&r=gta&a=womanvideo&t=safety
+// ═══════════════════════════════════════════
+var urlParams = new URLSearchParams(window.location.search);
+var tracking = {
+  campaign: urlParams.get('c') || '',
+  medium: urlParams.get('m') || '',
+  region: urlParams.get('r') || '',
+  ad: urlParams.get('a') || '',
+  content_type: urlParams.get('t') || ''
+};
 
 // ═══════════════════════════════════════════
 // STATE
@@ -236,7 +249,12 @@ function buildPayload(type) {
     renovation_type: answers.renovation_type || '',
     country: answers.country || '',
     zip_code: answers.zip_code || '',
-    score: calcScore()
+    score: calcScore(),
+    campaign: tracking.campaign,
+    medium: tracking.medium,
+    region: tracking.region,
+    ad: tracking.ad,
+    content_type: tracking.content_type
   };
 }
 
