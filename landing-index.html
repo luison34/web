@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:title" content="Your Bath Reno — Bathroom Renovation Specialists">
+<meta property="og:description" content="Toronto's trusted bathroom renovation experts. Certified professionals, lifetime warranty, modern materials.">
+<meta property="og:url" content="https://yourbathreno.com">
+<meta property="og:image" content="https://yourbathreno.com/preview.jpg">
+<title>Your Bath Reno — Bathroom Renovation Specialists | Toronto & GTA</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A2E3B;--navy-light:#243D4F;
+  --teal:#0097A7;--teal-dark:#00798A;
+  --white:#FFFFFF;--off-white:#F8F8F8;
+  --text-dark:#1A2E3B;--text-mid:#3D5A6E;--text-light:#7A8F9E;
+  --border:#D0D0D0;--radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--white);overflow-x:hidden}
+
+/* ═══ Utility ═══ */
+.container{width:100%;max-width:960px;margin:0 auto;padding:0 24px}
+.section{padding:72px 0}
+.section-alt{background:var(--off-white)}
+.section-dark{background:var(--navy);color:var(--white)}
+.section-label{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:10px;text-align:center}
+.section-title{font-size:clamp(26px,5vw,38px);font-weight:800;line-height:1.15;text-align:center;margin-bottom:16px}
+.section-subtitle{font-size:15px;color:var(--text-mid);line-height:1.6;text-align:center;max-width:600px;margin:0 auto 40px}
+.section-dark .section-subtitle{color:rgba(255,255,255,.7)}
+.section-dark .section-title{color:var(--white)}
+
+/* ═══ CTA Button ═══ */
+.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:var(--radius);background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:var(--white);font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;text-decoration:none;transition:all .3s;box-shadow:0 6px 24px rgba(0,151,167,.25);position:relative;overflow:hidden;border:none;cursor:pointer}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,151,167,.35)}
+.cta-btn::after{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);animation:shimmer 3s infinite}
+@keyframes shimmer{to{left:125%}}
+.cta-btn-outline{background:transparent;border:2px solid var(--teal);color:var(--teal);box-shadow:none}
+.cta-btn-outline:hover{background:var(--teal);color:var(--white)}
+.cta-btn-white{background:var(--white);color:var(--navy);box-shadow:0 6px 24px rgba(0,0,0,.15)}
+.cta-btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,0,0,.2)}
+.cta-btn-white::after{display:none}
+.cta-center{text-align:center;margin-top:36px}
+
+/* ═══ Image placeholders ═══ */
+.img-placeholder{background:#E0E0E0;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:#888;font-size:13px;font-weight:600;text-align:center;overflow:hidden;position:relative}
+.img-placeholder img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+
+/* ═══ Nav ═══ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);transition:all .3s}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto}
+.nav-logo{height:36px;object-fit:contain}
+.nav-cta{padding:10px 22px;font-size:14px}
+.nav-phone{font-size:14px;font-weight:600;color:var(--text-dark);text-decoration:none;margin-right:16px;display:none}
+@media(min-width:600px){.nav-phone{display:inline}}
+
+/* ═══ Hero ═══ */
+.hero{padding:130px 0 80px;background:url('marmol.jpg') center/cover no-repeat;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,46,59,.75) 0%,rgba(26,46,59,.55) 100%)}
+.hero-inner{position:relative;z-index:2;text-align:center;color:var(--white)}
+.hero-logo{height:48px;margin-bottom:24px;object-fit:contain}
+.hero h1{font-size:clamp(28px,6vw,46px);font-weight:800;line-height:1.12;margin-bottom:16px;max-width:700px;margin-left:auto;margin-right:auto}
+.hero p{font-size:clamp(15px,3vw,18px);color:rgba(255,255,255,.85);line-height:1.6;max-width:540px;margin:0 auto 32px}
+.hero-badges{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:32px}
+.hero-badge{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,.9)}
+.hero-badge svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:2}
+
+/* ═══ Services ═══ */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.service-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:all .3s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.1)}
+.service-img{width:100%;height:200px}
+.service-body{padding:20px}
+.service-body h3{font-size:18px;font-weight:800;margin-bottom:8px;color:var(--text-dark)}
+.service-body p{font-size:13px;color:var(--text-mid);line-height:1.55}
+
+/* ═══ Why Us ═══ */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
+.why-item{text-align:center;padding:20px}
+.why-icon{width:56px;height:56px;border-radius:50%;background:rgba(0,151,167,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.why-icon svg{width:26px;height:26px;stroke:var(--teal);fill:none;stroke-width:2}
+.why-item h3{font-size:17px;font-weight:800;margin-bottom:8px}
+.why-item p{font-size:13px;color:var(--text-mid);line-height:1.55}
+
+/* ═══ How it works ═══ */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;counter-reset:step}
+.step{text-align:center;position:relative;padding:24px 16px}
+.step::before{counter-increment:step;content:counter(step);width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--white);font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.step h3{font-size:17px;font-weight:800;margin-bottom:8px}
+.step p{font-size:13px;color:var(--text-mid);line-height:1.55}
+
+/* ═══ Reviews ═══ */
+.reviews-hero{text-align:center}
+.reviews-rating{font-size:clamp(48px,10vw,72px);font-weight:800;color:var(--white);line-height:1}
+.reviews-stars{color:#FFC107;font-size:28px;margin:8px 0}
+.reviews-count{font-size:16px;color:rgba(255,255,255,.7);margin-bottom:32px}
+.reviews-badges{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.review-badge{width:80px;height:80px;background:rgba(255,255,255,.1);border-radius:12px;display:flex;align-items:center;justify-content:center}
+.review-badge img{width:60px;height:auto;object-fit:contain}
+
+/* ═══ Service Area ═══ */
+.area-content{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media(max-width:640px){.area-content{grid-template-columns:1fr}}
+.area-img{width:100%;height:300px}
+.area-text h3{font-size:clamp(22px,4vw,30px);font-weight:800;margin-bottom:12px}
+.area-text p{font-size:14px;color:var(--text-mid);line-height:1.6;margin-bottom:20px}
+.area-cities{font-size:13px;color:var(--text-light);line-height:1.7}
+
+/* ═══ Footer ═══ */
+.footer{background:var(--navy);color:rgba(255,255,255,.7);padding:48px 0 24px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.footer-logo{height:32px;object-fit:contain;opacity:.8}
+.footer-links{display:flex;align-items:center;gap:20px}
+.footer-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{text-align:center;font-size:12px;color:rgba(255,255,255,.4);margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08)}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+<div class="nav-inner">
+<img src="logo.png" alt="Your Bath Reno" class="nav-logo">
+<div>
+<a href="tel:+16477045559" class="nav-phone">📞 (647) 704-5559</a>
+<a href="quiz/" class="cta-btn nav-cta">Free Assessment</a>
+</div>
+</div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+<div class="container hero-inner">
+<img src="logo.png" alt="Your Bath Reno" class="hero-logo">
+<h1>Toronto's Trusted Bathroom Renovation Specialists</h1>
+<p>Expert craftsmanship, certified professionals, and modern materials. Transforming bathrooms across the Greater Toronto Area.</p>
+<a href="quiz/" class="cta-btn">Take Our Free Assessment →</a>
+<div class="hero-badges">
+<div class="hero-badge"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>4.9 Rating</div>
+<div class="hero-badge"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Lifetime Warranty</div>
+<div class="hero-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1–2 Day Install</div>
+</div>
+</div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="section">
+<div class="container">
+<div class="section-label">Our Services</div>
+<h2 class="section-title">Everything Your Bathroom Needs</h2>
+<p class="section-subtitle">From full remodels to quick upgrades, we specialize exclusively in bathrooms — it's all we do.</p>
+<div class="services-grid">
+
+<div class="service-card">
+<div class="img-placeholder service-img" alt="Modern walk-in shower with glass door and marble tiles — service-shower.jpg (480x400)">
+<img src="images/service-shower.jpg" alt="Tub-to-shower conversion" onerror="this.remove()">
+service-shower.jpg (480×400)
+</div>
+<div class="service-body">
+<h3>Tub-to-Shower Conversion</h3>
+<p>Transform your outdated bathtub into an elegant, modern walk-in shower in as little as one day.</p>
+</div>
+</div>
+
+<div class="service-card">
+<div class="img-placeholder service-img" alt="Fully remodeled luxury bathroom with freestanding tub — service-remodel.jpg (480x400)">
+<img src="images/service-remodel.jpg" alt="Full bathroom remodel" onerror="this.remove()">
+service-remodel.jpg (480×400)
+</div>
+<div class="service-body">
+<h3>Full Bathroom Remodel</h3>
+<p>Complete gut-and-rebuild renovations with premium materials, custom design, and expert installation.</p>
+</div>
+</div>
+
+<div class="service-card">
+<div class="img-placeholder service-img" alt="Modern bathroom with updated vanity and fixtures — service-refresh.jpg (480x400)">
+<img src="images/service-refresh.jpg" alt="Fixture and surface refresh" onerror="this.remove()">
+service-refresh.jpg (480×400)
+</div>
+<div class="service-body">
+<h3>Fixture &amp; Surface Refresh</h3>
+<p>Update your vanity, tiles, hardware, and fixtures for a fresh new look without a full remodel.</p>
+</div>
+</div>
+
+<div class="service-card">
+<div class="img-placeholder service-img" alt="Walk-in tub with grab bars and accessible features — service-accessibility.jpg (480x400)">
+<img src="images/service-accessibility.jpg" alt="Accessibility upgrades" onerror="this.remove()">
+service-accessibility.jpg (480×400)
+</div>
+<div class="service-body">
+<h3>Accessibility Upgrades</h3>
+<p>Walk-in tubs, grab bars, barrier-free showers, and safety features for comfortable, independent bathing.</p>
+</div>
+</div>
+
+</div>
+<div class="cta-center"><a href="quiz/" class="cta-btn-outline cta-btn">Discover What's Right for You →</a></div>
+</div>
+</section>
+
+<!-- ═══ WHY US ═══ -->
+<section class="section section-alt">
+<div class="container">
+<div class="section-label">Why Choose Us</div>
+<h2 class="section-title">Bathroom Specialists You Can Trust</h2>
+<p class="section-subtitle">We don't do kitchens, floors, or roofs. We do bathrooms — and we do them better than anyone.</p>
+<div class="why-grid">
+
+<div class="why-item">
+<div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+<h3>Certified Professionals</h3>
+<p>The largest network of vetted, certified bathroom renovation specialists in the Greater Toronto Area.</p>
+</div>
+
+<div class="why-item">
+<div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+<h3>Lifetime Warranty</h3>
+<p>Every installation is backed by a full lifetime warranty. We stand behind our work, permanently.</p>
+</div>
+
+<div class="why-item">
+<div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+<h3>Fast Installation</h3>
+<p>Most projects completed in just 1–2 days. Minimal disruption to your home and daily routine.</p>
+</div>
+
+<div class="why-item">
+<div class="why-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+<h3>100% Waterproof</h3>
+<p>Premium, easy-to-clean materials that are built to last. No mold, no leaks, no maintenance headaches.</p>
+</div>
+
+<div class="why-item">
+<div class="why-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+<h3>Top ROI Investment</h3>
+<p>Bathroom remodels are one of the top 3 home improvements for return on investment in Canada.</p>
+</div>
+
+<div class="why-item">
+<div class="why-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+<h3>Custom Designs</h3>
+<p>Every bathroom is unique. Our specialists design solutions tailored to your space, style, and budget.</p>
+</div>
+
+</div>
+<div class="cta-center"><a href="quiz/" class="cta-btn">See What's Possible for Your Home →</a></div>
+</div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="section">
+<div class="container">
+<div class="section-label">How It Works</div>
+<h2 class="section-title">Three Simple Steps</h2>
+<p class="section-subtitle">Getting started is easy. No pressure, no commitment — just useful information about your home.</p>
+<div class="steps">
+
+<div class="step">
+<h3>Take the Quiz</h3>
+<p>Answer a few quick questions about your home and bathroom. It only takes 1 minute.</p>
+</div>
+
+<div class="step">
+<h3>Send Us a Photo</h3>
+<p>Snap a quick photo of your current bathroom. Our team will review the layout and condition.</p>
+</div>
+
+<div class="step">
+<h3>Get Your Plan</h3>
+<p>Receive a personalized renovation recommendation with design options and a preliminary estimate.</p>
+</div>
+
+</div>
+<div class="cta-center"><a href="quiz/" class="cta-btn">Start Your Free Assessment →</a></div>
+</div>
+</section>
+
+<!-- ═══ REVIEWS ═══ -->
+<section class="section section-dark">
+<div class="container">
+<div class="reviews-hero">
+<div class="section-label" style="color:rgba(255,255,255,.5)">Trusted by Thousands</div>
+<div class="reviews-rating">4.9</div>
+<div class="reviews-stars">★★★★★</div>
+<div class="reviews-count">Based on 10,000+ verified reviews across all platforms</div>
+<div class="reviews-badges">
+<div class="review-badge">
+<img src="images/badge-google.png" alt="Google Reviews" onerror="this.parentElement.innerHTML='Google'">
+</div>
+<div class="review-badge">
+<img src="images/badge-homestars.png" alt="HomeStars" onerror="this.parentElement.innerHTML='HomeStars'">
+</div>
+<div class="review-badge">
+<img src="images/badge-houzz.png" alt="Houzz" onerror="this.parentElement.innerHTML='Houzz'">
+</div>
+<div class="review-badge">
+<img src="images/badge-homeadvisor.png" alt="HomeAdvisor" onerror="this.parentElement.innerHTML='HomeAdvisor'">
+</div>
+</div>
+</div>
+<div class="cta-center"><a href="quiz/" class="cta-btn-white cta-btn">Take the Free Assessment →</a></div>
+</div>
+</section>
+
+<!-- ═══ SERVICE AREA ═══ -->
+<section class="section section-alt">
+<div class="container">
+<div class="area-content">
+<div class="img-placeholder area-img" alt="Map or aerial photo of Toronto skyline and GTA — area-map.jpg (600x600)">
+<img src="images/area-map.jpg" alt="Greater Toronto Area" onerror="this.remove()">
+area-map.jpg (600×600)
+</div>
+<div class="area-text">
+<div class="section-label" style="text-align:left">Service Area</div>
+<h3>Proudly Serving the Greater Toronto Area</h3>
+<p>From downtown Toronto to the surrounding suburbs and beyond, our certified professionals are ready to transform your bathroom.</p>
+<p class="area-cities">Toronto · Mississauga · Brampton · Vaughan · Markham · Richmond Hill · Oakville · Burlington · Milton · Hamilton · Pickering · Ajax · Whitby · Oshawa · Barrie · Newmarket · Aurora · Kitchener · Waterloo · Cambridge · Guelph · St. Catharines · Niagara Falls · and more</p>
+<a href="quiz/" class="cta-btn" style="margin-top:24px">Check If We Serve Your Area →</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+<div class="container">
+<div class="footer-inner">
+<img src="logo.png" alt="Your Bath Reno" class="footer-logo">
+<div class="footer-links">
+<a href="tel:+16477045559">📞 (647) 704-5559</a>
+<a href="quiz/">Free Assessment</a>
+</div>
+</div>
+<div class="footer-copy">© 2026 Your Bath Reno. All rights reserved. Serving the Greater Toronto Area.</div>
+</div>
+</footer>
+
+</body>
+</html>
