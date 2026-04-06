@@ -274,6 +274,7 @@ fbq('track', 'CompleteRegistration', { value: payload.score, currency: 'CAD' });
   //
   // TIK TOK
 ttq.track('CompleteRegistration');
+ttq.track('SubmitForm');
   //
   // GOOGLE ANALYTICS:
 gtag('event', 'quiz_completed', { score: payload.score, country: payload.country });
