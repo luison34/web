@@ -272,6 +272,9 @@ fbq('track', 'CompleteRegistration', { value: payload.score, currency: 'CAD' });
   // GOOGLE ADS:
   // gtag('event', 'conversion', { send_to: 'AW-XXXXXXXXX/XXXXXX' });
   //
+  // TIK TOK
+ttq.track('CompleteRegistration');
+  //
   // GOOGLE ANALYTICS:
 gtag('event', 'quiz_completed', { score: payload.score, country: payload.country });
   // ═══════════════════════════════════════════
