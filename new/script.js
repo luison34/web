@@ -292,39 +292,43 @@ gtag('event', 'quiz_completed', { score: payload.score, country: payload.country
 }
 
 // ═══════════════════════════════════════════
-// SUPABASE — saves quiz data to bathreno-leads
+// SUPABASE — routes to bathreno-registro or bathreno-leads
 // ═══════════════════════════════════════════
 function saveToSupabase(payload) {
   var now = new Date();
   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
+  var isLead = payload.type === 'lead';
+  var table  = isLead ? 'bathreno-leads' : 'bathreno-registro';
+
   var record = {
-    type:             payload.type,
-    ownership_status: payload.ownership_status,
-    home_type:        payload.home_type,
-    bathroom_count:   payload.bathroom_count,
-    renovation_count: payload.renovation_count,
+    ownership_status:    payload.ownership_status,
+    home_type:           payload.home_type,
+    bathroom_count:      payload.bathroom_count,
+    renovation_count:    payload.renovation_count,
     renovation_timeline: payload.renovation_timeline,
-    bathroom_style:   payload.bathroom_style,
-    renovation_type:  payload.renovation_type,
-    country:          payload.country,
-    zip_code:         payload.zip_code,
-    score:            payload.score,
-    campaign:         payload.campaign,
-    medium:           payload.medium,
-    region:           payload.region,
-    ad:               payload.ad,
-    content_type:     payload.content_type,
-    name:             payload.name  || null,
-    phone:            payload.phone || null,
-    timestamp:        now.toISOString(),
-    day:              days[now.getDay()],
-    hour:             now.getHours()
+    bathroom_style:      payload.bathroom_style,
+    renovation_type:     payload.renovation_type,
+    country:             payload.country,
+    zip_code:            payload.zip_code,
+    score:               payload.score,
+    campaign:            payload.campaign,
+    medium:              payload.medium,
+    region:              payload.region,
+    ad:                  payload.ad,
+    content_type:        payload.content_type,
+    timestamp:           now.toISOString(),
+    day:                 days[now.getDay()],
+    hour:                now.getHours()
   };
 
-  console.log('[Supabase] Sending record:', record);
+  // Only leads carry name and phone
+  if (isLead) {
+    record.name  = payload.name  || null;
+    record.phone = payload.phone || null;
+  }
 
-  return fetch(SUPABASE_URL + '/rest/v1/bathreno-leads', {
+  return fetch(SUPABASE_URL + '/rest/v1/' + table, {
     method: 'POST',
     headers: {
       'apikey':        SUPABASE_KEY,
@@ -336,10 +340,8 @@ function saveToSupabase(payload) {
   }).then(function(res) {
     if (!res.ok) {
       return res.text().then(function(text) {
-        console.error('[Supabase] INSERT failed — status:', res.status, '— response:', text);
         throw new Error('Supabase error ' + res.status + ': ' + text);
       });
     }
-    console.log('[Supabase] INSERT success — status:', res.status);
   });
 }
