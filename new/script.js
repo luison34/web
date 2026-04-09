@@ -286,10 +286,6 @@ fbq('track', 'CompleteRegistration', { value: payload.score, currency: 'CAD' });
   // GOOGLE ADS:
   // gtag('event', 'conversion', { send_to: 'AW-XXXXXXXXX/XXXXXX' });
   //
-  //TIK TOK
-ttq.track('CompleteRegistration');
-ttq.track('SubmitForm');
-  //
   // GOOGLE ANALYTICS:
 gtag('event', 'quiz_completed', { score: payload.score, country: payload.country });
   // ═══════════════════════════════════════════
@@ -303,9 +299,6 @@ function saveToSupabase(payload) {
   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   var record = {
-    timestamp:        now.toISOString(),
-    day:              days[now.getDay()],
-    hour:             now.getHours(),
     ownership_status: payload.ownership_status,
     home_type:        payload.home_type,
     bathroom_count:   payload.bathroom_count,
@@ -321,7 +314,11 @@ function saveToSupabase(payload) {
     region:           payload.region,
     ad:               payload.ad,
     content_type:     payload.content_type,
-    
+    name:             payload.name  || null,
+    phone:            payload.phone || null,
+    timestamp:        now.toISOString(),
+    day:              days[now.getDay()],
+    hour:             now.getHours()
   };
 
   return fetch(SUPABASE_URL + '/rest/v1/bathreno-leads', {
