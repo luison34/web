@@ -299,6 +299,9 @@ function saveToSupabase(payload) {
   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   var record = {
+    timestamp:        now.toISOString(),
+    day:              days[now.getDay()],
+    hour:             now.getHours(),
     ownership_status: payload.ownership_status,
     home_type:        payload.home_type,
     bathroom_count:   payload.bathroom_count,
@@ -314,9 +317,7 @@ function saveToSupabase(payload) {
     region:           payload.region,
     ad:               payload.ad,
     content_type:     payload.content_type,
-    timestamp:        now.toISOString(),
-    day:              days[now.getDay()],
-    hour:             now.getHours()
+    
   };
 
   return fetch(SUPABASE_URL + '/rest/v1/bathreno-leads', {
