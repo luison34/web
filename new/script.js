@@ -299,6 +299,7 @@ function saveToSupabase(payload) {
   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   var record = {
+    type:             payload.type,
     ownership_status: payload.ownership_status,
     home_type:        payload.home_type,
     bathroom_count:   payload.bathroom_count,
@@ -321,6 +322,8 @@ function saveToSupabase(payload) {
     hour:             now.getHours()
   };
 
+  console.log('[Supabase] Sending record:', record);
+
   return fetch(SUPABASE_URL + '/rest/v1/bathreno-leads', {
     method: 'POST',
     headers: {
@@ -333,8 +336,10 @@ function saveToSupabase(payload) {
   }).then(function(res) {
     if (!res.ok) {
       return res.text().then(function(text) {
+        console.error('[Supabase] INSERT failed — status:', res.status, '— response:', text);
         throw new Error('Supabase error ' + res.status + ': ' + text);
       });
     }
+    console.log('[Supabase] INSERT success — status:', res.status);
   });
 }
