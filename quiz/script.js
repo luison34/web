@@ -140,6 +140,7 @@ function handleCountryNext() {
       zh.textContent = 'Enter your Canadian postal code';
     }
     goTo(11);
+    setTimeout(function(){ zi.focus(); }, 400);
   } else {
     saveRegistro();
     goTo(12);
