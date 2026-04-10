@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Main Site (static)",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "3000", "--directory", "/Users/luisitac/Documents/GitHub/web"],
+      "port": 3000
+    },
+    {
+      "name": "Quiz (static)",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "3001", "--directory", "/Users/luisitac/Documents/GitHub/web/quiz"],
+      "port": 3001
+    }
+  ]
+}
