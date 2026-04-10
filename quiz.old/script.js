@@ -1,9 +1,7 @@
 // ═══════════════════════════════════════════
 // CONFIG
 // ═══════════════════════════════════════════
-var SUPABASE_URL = 'https://mremxexoltefqoyapnnc.supabase.co';
-var SUPABASE_KEY = 'sb_publishable_yqwSAUdDZu75T9E8PyshCQ_y2DWF8_o';
-// ────────────────────────────────────────────
+var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyp0cYML-SvXPKyFVUIvKTyjiMOisnZU144Matu4BhEe8OSMeTo2cTTqwsbBEvuTrU/exec";
 
 var SCORES = {
   ownership_status: { owner:30, renter:0 },
@@ -217,20 +215,10 @@ function handleLeadSubmit() {
   var payload = buildPayload('lead');
   payload.name = document.getElementById('nameInput').value.trim();
   payload.phone = document.getElementById('phoneInput').value.trim();
-
-  saveToSupabase(payload)
-    .catch(function(err) { console.error('Supabase lead save error:', err); })
-    .then(function() {
-      btn.classList.remove('sending');
-      showThankYou();
-    });
-}
-
-// ═══════════════════════════════════════════
-// THANK YOU
-// ═══════════════════════════════════════════
-function showThankYou() {
-  goTo(13);
+  sendToSheet(payload, function() {
+    btn.classList.remove('sending');
+    goTo(13);
+  });
 }
 
 // ═══════════════════════════════════════════
@@ -274,9 +262,7 @@ function saveRegistro() {
   if (registroSaved) return;
   registroSaved = true;
   var payload = buildPayload('registro');
-  saveToSupabase(payload).catch(function(err) {
-    console.error('Supabase registro save error:', err);
-  });
+  sendToSheet(payload);
 
   // ═══════════════════════════════════════════
   // 🔥 CONVERSION TRACKING — FIRE HERE
@@ -286,62 +272,25 @@ fbq('track', 'CompleteRegistration', { value: payload.score, currency: 'CAD' });
   // GOOGLE ADS:
   // gtag('event', 'conversion', { send_to: 'AW-XXXXXXXXX/XXXXXX' });
   //
+  // TIK TOK
+ttq.track('CompleteRegistration');
+ttq.track('SubmitForm');
+  //
   // GOOGLE ANALYTICS:
 gtag('event', 'quiz_completed', { score: payload.score, country: payload.country });
   // ═══════════════════════════════════════════
 }
 
-// ═══════════════════════════════════════════
-// SUPABASE — routes to bathreno-registro or bathreno-leads
-// ═══════════════════════════════════════════
-function saveToSupabase(payload) {
-  var now = new Date();
-  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
-  var isLead = payload.type === 'lead';
-  var table  = isLead ? 'bathreno-leads' : 'bathreno-registro';
-
-  var record = {
-    ownership_status:    payload.ownership_status,
-    home_type:           payload.home_type,
-    bathroom_count:      payload.bathroom_count,
-    renovation_count:    payload.renovation_count,
-    renovation_timeline: payload.renovation_timeline,
-    bathroom_style:      payload.bathroom_style,
-    renovation_type:     payload.renovation_type,
-    country:             payload.country,
-    zip_code:            payload.zip_code,
-    score:               payload.score,
-    campaign:            payload.campaign,
-    medium:              payload.medium,
-    region:              payload.region,
-    ad:                  payload.ad,
-    content_type:        payload.content_type,
-    timestamp:           now.toISOString(),
-    day:                 days[now.getDay()],
-    hour:                now.getHours()
-  };
-
-  // Only leads carry name and phone
-  if (isLead) {
-    record.name  = payload.name  || null;
-    record.phone = payload.phone || null;
-  }
-
-  return fetch(SUPABASE_URL + '/rest/v1/' + table, {
+function sendToSheet(payload, callback) {
+  fetch(SCRIPT_URL, {
     method: 'POST',
-    headers: {
-      'apikey':        SUPABASE_KEY,
-      'Authorization': 'Bearer ' + SUPABASE_KEY,
-      'Content-Type':  'application/json',
-      'Prefer':        'return=minimal'
-    },
-    body: JSON.stringify(record)
-  }).then(function(res) {
-    if (!res.ok) {
-      return res.text().then(function(text) {
-        throw new Error('Supabase error ' + res.status + ': ' + text);
-      });
-    }
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function() { if (callback) callback(); })
+  .catch(function(err) {
+    console.error('Sheet save error:', err);
+    if (callback) callback();
   });
 }
