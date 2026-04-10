@@ -475,7 +475,7 @@ svg { display: block; }
   width: 100%;
   letter-spacing: -.01em;
 }
-.intro-options { text-align: left; width: 100%; }
+.intro-options { text-align: left; width: 100%; margin-bottom: 20px; }
 
 /* Trust row on intro */
 .trust-row {
