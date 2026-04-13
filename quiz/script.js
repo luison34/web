@@ -302,6 +302,8 @@ function saveToSupabase(payload) {
   var isLead = payload.type === 'lead';
   var table  = isLead ? 'bathreno-leads' : 'bathreno-registro';
 
+  console.log('[Supabase] type:', payload.type, '→ table:', table);
+
   var record = {
     ownership_status:    payload.ownership_status,
     home_type:           payload.home_type,
@@ -323,7 +325,6 @@ function saveToSupabase(payload) {
     hour:                now.getHours()
   };
 
-  // Only leads carry name and phone
   if (isLead) {
     record.name  = payload.name  || null;
     record.phone = payload.phone || null;
@@ -341,8 +342,10 @@ function saveToSupabase(payload) {
   }).then(function(res) {
     if (!res.ok) {
       return res.text().then(function(text) {
+        console.error('[Supabase] INSERT failed — table:', table, '— status:', res.status, '— response:', text);
         throw new Error('Supabase error ' + res.status + ': ' + text);
       });
     }
+    console.log('[Supabase] INSERT success — table:', table);
   });
 }
