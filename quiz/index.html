@@ -542,7 +542,7 @@ src="https://www.facebook.com/tr?id=4285889088333258&ev=PageView&noscript=1"
   <div class="bottom"><button class="continue-btn" id="zipBtn" onclick="handleZipNext()">Continue</button></div>
 </div>
 
-<!-- ═══════════════ S12: OFFER + LEAD CAPTURE ═══════════════ -->
+<!-- ═══════════════ S12: LEAD CAPTURE (soft, collaborative) ═══════════════ -->
 <div class="screen" data-screen="12">
   <div class="top-bar">
     <button class="icon-btn" onclick="goBack()" aria-label="Back"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
@@ -550,41 +550,21 @@ src="https://www.facebook.com/tr?id=4285889088333258&ev=PageView&noscript=1"
     <button class="icon-btn" onclick="openHelp()" aria-label="Help"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button>
   </div>
   <div class="progress-wrap">
-    <div class="progress-meta"><span>You qualify · Unlock your offer</span><span class="step-label">98%</span></div>
+    <div class="progress-meta"><span>Almost done</span><span class="step-label">98%</span></div>
     <div class="progress-track"><div class="progress-fill" style="width:98%"></div></div>
   </div>
   <div class="lead-content">
-    <div class="offer-card">
-      <span class="offer-badge">
-        <svg viewBox="0 0 24 24"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor" stroke="none"/></svg>
-        Exclusive Offer
-      </span>
-      <h2 class="offer-title">You've unlocked <span class="accent">$500 off</span> your renovation</h2>
-      <p class="offer-sub">Plus a free 1-hour design consultation with a specialist — no obligation.</p>
-
-      <div class="offer-value-row">
-        <div class="offer-value">
-          <span class="offer-value-num">$500</span>
-          <span class="offer-value-label">Off renovation</span>
-        </div>
-        <div class="offer-value">
-          <span class="offer-value-num">1 hr</span>
-          <span class="offer-value-label">Free consult</span>
-        </div>
-        <div class="offer-value">
-          <span class="offer-value-num">$0</span>
-          <span class="offer-value-label">Commitment</span>
-        </div>
-      </div>
-
-      <div class="offer-urgency">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span><strong>Valid for 7 days only.</strong> Enter your details below to reserve.</span>
-      </div>
+    <div class="section-icon">
+      <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
     </div>
+    <h2 class="lead-form-title">Let's review your bathroom together</h2>
+    <p class="lead-form-sub">Leave your details and we'll text you with ideas and realistic options for your space.</p>
 
-    <h3 class="lead-form-title">Reserve your $500 credit</h3>
-    <p class="lead-form-sub">A specialist will call within a few hours to confirm your session.</p>
+    <div class="lead-features">
+      <div class="lead-feature"><div class="lead-feature-dot"></div><span>Review your layout and current condition</span></div>
+      <div class="lead-feature"><div class="lead-feature-dot"></div><span>Share ideas tailored to your bathroom</span></div>
+      <div class="lead-feature"><div class="lead-feature-dot"></div><span>Walk you through next steps — no pressure</span></div>
+    </div>
 
     <div class="input-group">
       <div class="input-label">Full name</div>
@@ -595,29 +575,29 @@ src="https://www.facebook.com/tr?id=4285889088333258&ev=PageView&noscript=1"
       <input type="tel" class="input-field" id="phoneInput" placeholder="e.g. 4165550123" maxlength="10" oninput="handleLeadInput()">
     </div>
     <p class="privacy-note">
-      <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      Your information is private. No spam. No sales pressure.
+      <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      We'll text, not call. No spam. No pressure.
     </p>
   </div>
-  <div class="bottom"><button class="continue-btn copper" id="leadBtn" onclick="handleLeadSubmit()">Unlock my $500 credit</button></div>
+  <div class="bottom"><button class="continue-btn" id="leadBtn" onclick="handleLeadSubmit()">Continue</button></div>
 </div>
 
-<!-- ═══════════════ S13: THANK YOU ═══════════════ -->
+<!-- ═══════════════ S13: THANK YOU + SURPRISE $500 ═══════════════ -->
 <div class="screen" data-screen="13">
   <div class="thankyou-content">
     <div class="thankyou-check">
       <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
-    <h2 class="thankyou-title">Your credit is reserved</h2>
-    <p class="thankyou-text">Thanks for completing the assessment. A specialist from our team will call you shortly to confirm your free design consultation and apply your credit.</p>
+    <h2 class="thankyou-title">You're all set!</h2>
+    <p class="thankyou-text">We'll text you within a few hours with ideas and options for your space.</p>
 
     <div class="reservation-card">
-      <div class="label">Reserved for you</div>
-      <div class="value">$500 off + Free 1-hour design consult</div>
-      <div class="expires">Expires in <strong>7 days</strong> — we'll call within the next few hours.</div>
+      <div class="label">Bonus — as a thank you</div>
+      <div class="value">We're including a $500 credit toward your renovation + a free 1-hour design consultation.</div>
+      <div class="expires">Valid for <strong>7 days</strong> — your specialist will mention it when they text you.</div>
     </div>
 
-    <p class="thankyou-text" style="margin-bottom:14px">If you prefer not to wait, text us now with a photo of your bathroom and we'll get started.</p>
+    <p class="thankyou-text" style="margin-bottom:14px">If you prefer not to wait, text us now with a photo of your bathroom and we'll get started right away.</p>
     <a href="sms:+16477045559" class="text-btn">
       <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       Text us your bathroom photo
