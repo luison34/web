@@ -303,6 +303,7 @@ function saveToSupabase(payload) {
   var table  = isLead ? 'bathreno-leads' : 'bathreno-registro';
 
   var record = {
+    source:              'quiz',
     ownership_status:    payload.ownership_status,
     home_type:           payload.home_type,
     bathroom_count:      payload.bathroom_count,
