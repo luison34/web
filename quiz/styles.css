@@ -768,6 +768,29 @@ svg { display: block; }
   margin-bottom: 14px;
 }
 
+.lead-features {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.lead-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--charcoal);
+  line-height: 1.4;
+}
+.lead-feature-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--copper);
+  flex-shrink: 0;
+}
+
 .input-group { width: 100%; margin-bottom: 12px; }
 .input-label {
   font-size: 11px;

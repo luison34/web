@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="robots" content="noindex,nofollow">
+<title>S12 Preview — Offer Variants</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ── Debug bar ── */
+  body { overflow: hidden !important; }
+  .debug-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: var(--charcoal);
+    color: var(--white);
+    padding: 10px 14px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    z-index: 200;
+    box-shadow: 0 2px 12px rgba(0,0,0,.3);
+    flex-wrap: wrap;
+  }
+  .debug-info { display: flex; align-items: center; gap: 10px; }
+  .debug-label { color: rgba(255,255,255,.6); font-size: 10px; text-transform: uppercase; letter-spacing: .1em; }
+  .debug-pill {
+    background: var(--copper);
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .04em;
+  }
+  .debug-actions { display: flex; gap: 8px; }
+  .debug-btn {
+    background: rgba(255,255,255,.1);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,.2);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s ease;
+  }
+  .debug-btn:hover { background: rgba(255,255,255,.2); }
+  .debug-btn.primary { background: var(--copper); border-color: var(--copper); }
+  .debug-btn.primary:hover { background: var(--copper-dark); }
+
+  /* Push the app down so debug bar doesn't overlap */
+  #app { margin-top: 44px; height: calc(100vh - 44px); }
+</style>
+</head>
+<body>
+
+<div class="debug-bar">
+  <div class="debug-info">
+    <span class="debug-label">Variant:</span>
+    <span class="debug-pill" id="dbgPill">A</span>
+    <span id="dbgLabel" style="font-size:11px;color:rgba(255,255,255,.85);"></span>
+  </div>
+  <div class="debug-actions">
+    <button class="debug-btn" onclick="cycleVariant()">Next →</button>
+    <button class="debug-btn primary" onclick="randomize()">🎲 Random</button>
+  </div>
+</div>
+
+<div id="app">
+
+<!-- ═══════════════ S12: LEAD CAPTURE (preview only) ═══════════════ -->
+<div class="screen active" data-screen="12">
+  <div class="top-bar">
+    <button class="icon-btn" aria-label="Back"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+    <img src="logo.png" alt="Logo" class="top-logo">
+    <button class="icon-btn" aria-label="Help"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-meta"><span>Almost done</span><span class="step-label">98%</span></div>
+    <div class="progress-track"><div class="progress-fill" style="width:98%"></div></div>
+  </div>
+  <div class="lead-content">
+    <h2 class="lead-form-title">Let's review your bathroom together</h2>
+    <p class="lead-form-sub">Leave your details and we'll text you with ideas and realistic options for your space.</p>
+
+    <div class="lead-features">
+      <div class="lead-feature"><div class="lead-feature-dot"></div><span>Review your layout and current condition</span></div>
+      <div class="lead-feature"><div class="lead-feature-dot"></div><span>Share ideas tailored to your bathroom</span></div>
+      <div class="lead-feature"><div class="lead-feature-dot"></div><span>Walk you through next steps — no pressure</span></div>
+    </div>
+
+    <div class="mini-testimonial">
+      <div class="mini-testimonial-stars">★★★★★</div>
+      <p class="mini-testimonial-quote">They reached out quickly, no pressure at all. Super helpful and professional.</p>
+      <div class="mini-testimonial-author">— Sarah J., Mississauga</div>
+    </div>
+
+    <div class="offer-soft" id="offerCard">
+      <div class="offer-soft-icon">
+        <svg viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+      </div>
+      <div class="offer-soft-text">
+        <strong id="offerHeadline">Includes a $500 credit toward your renovation</strong>
+        <span id="offerSubtext">Plus a free 1-hour design consultation — on us.</span>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <div class="input-label">Full name</div>
+      <input type="text" class="input-field" placeholder="e.g. Sarah Johnson">
+    </div>
+    <div class="input-group">
+      <div class="input-label">Phone number (10 digits)</div>
+      <input type="tel" class="input-field" placeholder="e.g. 4165550123" maxlength="10">
+    </div>
+
+    <div class="trust-row-compact">
+      <span class="trust-stars-small">★★★★★</span>
+      <span class="trust-label-small">4.9 · 10,000+ verified reviews</span>
+    </div>
+
+    <p class="privacy-note">
+      <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      We'll text, not call. No spam. No pressure.
+    </p>
+  </div>
+  <div class="bottom"><button class="continue-btn" onclick="alert('Preview only — form not active')">Continue</button></div>
+</div>
+
+</div>
+
+<script>
+  // Same variants as quiz/script.js
+  var OFFER_VARIANTS = {
+    A: {
+      label:    'A · $500 credit (control)',
+      headline: 'Includes a $500 credit toward your renovation',
+      sub:      'Plus a free 1-hour design consultation — on us.'
+    },
+    B: {
+      label:    'B · $1,000 credit',
+      headline: 'Includes a $1,000 credit toward your renovation',
+      sub:      'Plus a free 1-hour design consultation — on us.'
+    },
+    C: {
+      label:    'C · Photo review',
+      headline: "Send us a photo, we'll text back ideas for your space",
+      sub:      'Realistic options, real numbers, no pressure — usually within a few hours.'
+    },
+    D: {
+      label:    'D · 3-day speed',
+      headline: 'Most projects done in just 3 days',
+      sub:      'Free design consultation included. Done fast, done right.'
+    }
+  };
+
+  var keys = Object.keys(OFFER_VARIANTS);
+  var current = keys[Math.floor(Math.random() * keys.length)];
+
+  function applyVariant(code) {
+    var v = OFFER_VARIANTS[code];
+    if (!v) return;
+    document.getElementById('offerHeadline').textContent = v.headline;
+    document.getElementById('offerSubtext').textContent  = v.sub;
+    document.getElementById('dbgPill').textContent       = code;
+    document.getElementById('dbgLabel').textContent      = v.label;
+    current = code;
+  }
+
+  function cycleVariant() {
+    var i = keys.indexOf(current);
+    applyVariant(keys[(i + 1) % keys.length]);
+  }
+
+  function randomize() {
+    var others = keys.filter(function(k) { return k !== current; });
+    applyVariant(others[Math.floor(Math.random() * others.length)]);
+  }
+
+  applyVariant(current);
+</script>
+
+</body>
+</html>

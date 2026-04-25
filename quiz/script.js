@@ -5,6 +5,76 @@ var SUPABASE_URL = 'https://mremxexoltefqoyapnnc.supabase.co';
 var SUPABASE_KEY = 'sb_publishable_yqwSAUdDZu75T9E8PyshCQ_y2DWF8_o';
 // ────────────────────────────────────────────
 
+// ═══════════════════════════════════════════
+// OFFER VARIANTS (A/B test)
+// A = control ($500), B = $1000, C = photo review, D = 3-day speed
+// ═══════════════════════════════════════════
+var OFFER_VARIANTS = {
+  A: {
+    headline: 'Includes a $500 credit toward your renovation',
+    sub:      'Plus a free 1-hour design consultation \u2014 on us.'
+  },
+  B: {
+    headline: 'Includes a $1,000 credit toward your renovation',
+    sub:      'Plus a free 1-hour design consultation \u2014 on us.'
+  },
+  C: {
+    headline: "Send us a photo, we'll text back ideas for your space",
+    sub:      'Realistic options, real numbers, no pressure \u2014 usually within a few hours.'
+  },
+  D: {
+    headline: 'Most projects done in just 3 days',
+    sub:      'Free design consultation included. Done fast, done right.'
+  }
+};
+
+// ═══════════════════════════════════════════
+// SESSION (UUID + offer variant) — picked once per tab session
+// ═══════════════════════════════════════════
+function generateUUID() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0;
+    var v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+function getOrCreateSession() {
+  var sid = null, variant = null;
+  try {
+    sid = sessionStorage.getItem('byr_session_id');
+    variant = sessionStorage.getItem('byr_offer_variant');
+  } catch (e) { /* private mode / disabled storage */ }
+
+  if (!sid) {
+    sid = generateUUID();
+    try { sessionStorage.setItem('byr_session_id', sid); } catch (e) {}
+  }
+  if (!variant || !OFFER_VARIANTS[variant]) {
+    var keys = Object.keys(OFFER_VARIANTS);
+    variant = keys[Math.floor(Math.random() * keys.length)];
+    try { sessionStorage.setItem('byr_offer_variant', variant); } catch (e) {}
+  }
+  return { sid: sid, variant: variant };
+}
+
+var session = getOrCreateSession();
+
+function applyOfferVariant() {
+  var v = OFFER_VARIANTS[session.variant];
+  if (!v) return;
+  var h = document.getElementById('offerHeadline');
+  var s = document.getElementById('offerSubtext');
+  if (h) h.textContent = v.headline;
+  if (s) s.textContent = v.sub;
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', applyOfferVariant);
+} else {
+  applyOfferVariant();
+}
+// ────────────────────────────────────────────
+
 var SCORES = {
   ownership_status: { owner:30, renter:0 },
   home_type: { detached:30, semi_detached:20, townhouse:15, condo:10 },
@@ -304,6 +374,8 @@ function saveToSupabase(payload) {
 
   var record = {
     source:              'quiz',
+    session_id:          session.sid,
+    offer_variant:       session.variant,
     ownership_status:    payload.ownership_status,
     home_type:           payload.home_type,
     bathroom_count:      payload.bathroom_count,
