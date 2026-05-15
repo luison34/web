@@ -637,5 +637,45 @@ src="https://www.facebook.com/tr?id=4285889088333258&ev=PageView&noscript=1"
 
 </div>
 <script src="script.js"></script>
+<script>
+(function () {
+  function reportLeadConversion() {
+    if (window.__leadConversionFired) return;
+    window.__leadConversionFired = true;
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18144709091/wZuBCMa2ma0JcE0OTiexD',
+        'value': 1.0,
+        'currency': 'CAD'
+      });
+    }
+  }
+
+  function checkThankYouScreen() {
+    var thankYouScreen = document.querySelector('.screen[data-screen="13"].active');
+
+    if (thankYouScreen) {
+      reportLeadConversion();
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    checkThankYouScreen();
+
+    var observer = new MutationObserver(function () {
+      checkThankYouScreen();
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
